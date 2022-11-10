@@ -19,6 +19,10 @@
 # Introdução
 **OSINT Brazuca Regex** é um repositório criado com intuito de reunir **expressões regulares** dentro do contexto Brasil 🇧🇷.
 
+<br>
+
+
+# Documentos Brasileiros
 
 ## CNPJ - Cadastro Nacional da Pessoa Jurídica
 ```
@@ -45,6 +49,11 @@
 '(^[0-9]{5})-?([0-9]{3}$)'
 ```
 
+---
+<br>
+
+# REGEX Genéricas
+
 ## Telefone
 ```
 (?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))
@@ -64,7 +73,6 @@ https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0
 
 
 ## Email
-
 
 ```
 [^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+
