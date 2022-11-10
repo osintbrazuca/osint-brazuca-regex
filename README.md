@@ -49,7 +49,7 @@
 '(^[0-9]{5})-?([0-9]{3}$)'
 ```
 
----
+
 <br>
 
 # REGEX Genéricas
@@ -83,3 +83,26 @@ https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{1,256}\.[a-zA-Z0-9()]{1,6}\b([-a-zA-Z0
 ```
 [[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}
 ```
+
+<br>
+
+# Autores 👔 <a name="autores"></a>
+<p >
+<img src="assets/logo_profile.png" width="20%" /><br>
+<p>
+
+- **Cleiton P. (a.k.a. MrCl0wnLab)** - [Twitter](https://twitter.com/MrCl0wnLab), [Git](https://github.com/MrCl0wnLab)
+
+- **Diego (a.k.a. c4nh0t0)** - [Twitter](https://twitter.com/C4nh0t0GH), [Git](https://github.com/c4nh0t0)
+
+---
+
+## Contribuições ✨ <a name="contribuicoes"></a>
+Contribuições de qualquer tipo são bem-vindas!
+    
+---
+    
+## Créditos 👏 <a name="creditos"></a>
+À todas as instituições públicas governamentais e inciativas privadas que disponibilizaram os links para consulta.
+<br>
+À todos que de alguma forma contribuíram para o compartilhamento de links e tricks de consulta nos websites.
