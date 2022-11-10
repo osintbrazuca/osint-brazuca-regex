@@ -54,6 +54,11 @@
 (RNE)([A-Z\d])(\d{6})([A-Z\d])
 ```
 
+##  RENAVAM - Registro Nacional de Veículos Automotores
+```
+((\d{4})[.](\d{6})-(\d{1})|(\d{4})(\d{6})(\d{1}))
+```
+
 <br>
 
 # REGEX Genéricas
