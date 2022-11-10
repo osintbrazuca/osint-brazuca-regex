@@ -49,6 +49,10 @@
 '(^[0-9]{5})-?([0-9]{3}$)'
 ```
 
+## RNE - Registro Nacional de Estrangeiro
+```
+(RNE)([A-Z\d])(\d{6})([A-Z\d])
+```
 
 <br>
 
