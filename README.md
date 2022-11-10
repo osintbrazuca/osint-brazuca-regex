@@ -59,9 +59,14 @@
 ((\d{4})[.](\d{6})-(\d{1})|(\d{4})(\d{6})(\d{1}))
 ```
 
-## Boleto bancário e Linha Digitável
+## Boleto Bancário e Linha Digitável
 ```
 (\d{5}[\.]\d{5}[\s]\d{5}[\.]\d{6}[\s]\d{5}[\.]\d{6}[\s]\d[\s]\d{14})|(\d{47,48})|(\d{12} \d{12} \d{12} \d{12})
+```
+
+## Chave PIX Aleatória
+```
+([a-z\d]{8})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{12})
 ```
 
 ## Telefone
