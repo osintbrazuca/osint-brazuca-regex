@@ -71,7 +71,7 @@
 
 # CRM - Conselho Federal de Medicina
 ```
-(([0-9-\/]{5})(?i)[a-z]{2})|(([0-9-\/]{11})(?i)[a-z]{2})
+([0-9-\/]{5,11})(?i)[a-z]{2}
 ```
 
 ## Telefone
