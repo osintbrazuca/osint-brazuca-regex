@@ -46,7 +46,7 @@
 
 ## CEP - Código de Endereçamento Postal 
 ```
-'(^[0-9]{5})-?([0-9]{3}$)'
+(^[0-9]{5})-?([0-9]{3}$)
 ```
 
 ## RNE - Registro Nacional de Estrangeiro
@@ -69,7 +69,7 @@
 ([a-z\d]{8})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{12})
 ```
 
-# CRM - Conselho Federal de Medicina
+## CRM - Conselho Federal de Medicina
 ```
 ([0-9-\/]{5,11})(?i)[a-z]{2}
 ```
