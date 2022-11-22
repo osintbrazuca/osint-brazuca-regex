@@ -78,6 +78,10 @@
 ```
 (?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))
 ```
+## Siglas das UF`s
+```
+(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO|BR)
+```
 
 ## CADASTUR - (Cadastro de Prestadores de Serviços Turísticos)
 ```
