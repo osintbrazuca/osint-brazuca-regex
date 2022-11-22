@@ -79,7 +79,7 @@
 (?:(?:\+|00)?(55)\s?)?(?:\(?([1-9][0-9])\)?\s?)(?:((?:9\d|[2-9])\d{3})\-?(\d{4}))
 ```
 
-## Cadastur (Cadastro de Prestadores de Serviços Turísticos)
+## CADASTUR - (Cadastro de Prestadores de Serviços Turísticos)
 ```
 ([0-9]{2}[\.]?[0-9]{3}[\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})
 ```
