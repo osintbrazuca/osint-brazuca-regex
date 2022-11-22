@@ -106,5 +106,11 @@
             "regex": "[A-Z]{3}[0-9][0-9A-Z][0-9]{2}",
             "description": "Placas de Carros e Motos Brasileiras (incluindo Mercosul)"
         }
+    ],
+    "siglaUF": [
+        {
+            "regex": "(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO|BR)",
+            "description": "Siglas das Unidades Federativas do Brasil"
+        }
     ]
 }
