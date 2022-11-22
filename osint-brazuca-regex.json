@@ -88,5 +88,11 @@
             "regex": "[[:digit:]]{1,3}\\.[[:digit:]]{1,3}\\.[[:digit:]]{1,3}\\.[[:digit:]]{1,3}",
             "description": "IP - Internet Protocol"
         }
-    ]
+    ],
+    "correios": [
+        {
+            "regex": "/^[A-Z]{2}[0-9]{9}BR$/i",
+            "description": "Código de rastreamento de encomenda dos Correios"
+        }
+    ],
 }
