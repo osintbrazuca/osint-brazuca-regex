@@ -59,6 +59,11 @@
 ((\d{4})[.](\d{6})-(\d{1})|(\d{4})(\d{6})(\d{1}))
 ```
 
+## Placas de Veículos Automotores - Modelo Mercosul e Modelo Antigo
+```
+^([a-zA-Z]{3}\d[a-jA-J]\d{2})|([a-zA-Z]{3}-\d{4})$
+```
+
 ## Boleto Bancário e Linha Digitável
 ```
 (\d{5}[\.]\d{5}[\s]\d{5}[\.]\d{6}[\s]\d{5}[\.]\d{6}[\s]\d[\s]\d{14})|(\d{47,48})|(\d{12} \d{12} \d{12} \d{12})
