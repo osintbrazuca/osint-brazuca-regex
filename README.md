@@ -69,6 +69,11 @@
 ([a-z\d]{8})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{12})
 ```
 
+## Passaporte
+```
+^[A-Z]{2}\d{6}$
+```
+
 ## CRM - Conselho Federal de Medicina
 ```
 ([0-9-\/]{5,11})(?i)[a-z]{2}

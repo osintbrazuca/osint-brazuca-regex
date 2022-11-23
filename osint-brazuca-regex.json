@@ -59,6 +59,12 @@
             "description": "Chave PIX Aleatória"
         }
     ],
+    "passaporte": [
+        {
+            "regex": "^[A-Z]{2}\\d{6}$",
+            "description": "Número do Passaporte"
+        }
+    ],
     "data": [
         {
             "regex": "([0-9]{2})[-|\/]([0-9]{2})[-|\/]([0-9]{4})",
