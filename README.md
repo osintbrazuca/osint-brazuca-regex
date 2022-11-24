@@ -170,6 +170,6 @@ Contribuições de qualquer tipo são bem-vindas!
 ---
     
 ## Créditos 👏 <a name="creditos"></a>
-À todas as instituições públicas governamentais e inciativas privadas que disponibilizaram os links para consulta.
+A todas as instituições públicas governamentais e iniciativas privadas que disponibilizaram os links para consulta.
 <br>
-À todos que de alguma forma contribuíram para o compartilhamento de links e tricks de consulta nos websites.
+A todos que de alguma forma contribuíram para o compartilhamento de links e tricks de consulta nos websites.
