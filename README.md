@@ -156,6 +156,12 @@ https?:\/\/(www\.)?[^\/]*?\/?([^$]*?$)?
 ([01][0-9]|[2][0-3]):([0-5][0-9])
 ```
 
+## Senha (8-20 dígitos, letras maiúsculas, minúsculas, números e caracteres especiais)
+
+```
+^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[@#$%&*!-+&*]).{8,20}$
+```
+
 <br>
 
 # Autores 👔 <a name="autores"></a>
