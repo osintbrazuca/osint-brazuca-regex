@@ -155,5 +155,11 @@
             "regex": "https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)",
             "description": "URL - Uniform Resource Locator"
         }
+    ],
+    "verificacaoDeSenha": [ 
+        { 
+            "regex": "(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[@#$%&*!-+&*]).{8,20}",
+            "description": "Validador de senhas com tamanho entre 8 e 20 dígitos e com letras maiúsculas, minúsculas, números e caracteres especiais"
+        } 
     ]
 }
