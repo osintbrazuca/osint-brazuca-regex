@@ -33,6 +33,89 @@
 ```
 ^\d{3}.?\d{3}.?\d{3}\-?\d{2}$
 ```
+### CPF - Cadastro de Pessoas Físicas por Localidade
+<details>
+  <summary>Rio Grande do Sul</summary>
+  <br>
+  Dígito <b>0</b>
+  <p>Ex: 999.999.99<ins>0</ins>-99</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[0]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Distrito Federal, Goiás, Mato Grosso, Mato Grosso do Sul e Tocantins</summary>
+  <br>
+  Dígito <b>1</b>
+  <p>Ex: 000.000.00<ins>1</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[1]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Amazonas, Pará, Roraima, Amapá, Acre e Rondônia</summary>
+  <br>
+  Dígito <b>2</b>
+  <p>Ex: 000.000.00<ins>2</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[2]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Ceará, Maranhão e Piauí</summary>
+  <br>
+  Dígito <b>3</b>
+  <p>Ex: 000.000.00<ins>3</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[3]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Paraíba, Pernambuco, Alagoas e Rio Grande do Norte</summary>
+  <br>
+  Dígito <b>4</b>
+  <p>Ex: 000.000.00<ins>4</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[4]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Bahia e Sergipe</summary>
+  <br>
+  Dígito <b>5</b>
+  <p>Ex: 000.000.00<ins>5</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[5]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Minas Gerais</summary>
+  <br>
+  Dígito <b>6</b>
+  <p>Ex: 000.000.00<ins>6</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[6]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Rio de Janeiro e Espírito Santo</summary>
+  <br>
+  Dígito <b>7</b>
+  <p>Ex: 000.000.00<ins>7</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[7]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>São Paulo</summary>
+  <br>
+  Dígito <b>8</b>
+  <p>Ex: 000.000.00<ins>8</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[8]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+<details>
+  <summary>Paraná e Santa Catarina</summary>
+  <br>
+  Dígito <b>9</b>
+  <p>Ex: 000.000.00<ins>9</ins>-00</p>
+  <pre>^\d{3}.?\d{3}.?\d{2}[9]{1}\-?\d{2}$</pre>
+  <br>
+</details>
+
+
 
 ## RG - Registro Geral 
 ```
