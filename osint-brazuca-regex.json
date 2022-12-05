@@ -164,7 +164,7 @@
     ],
     "processoCnj": [ 
         { 
-            "regex": "[0-9]{7}\-?[0-9]{2}\.?[0-9]{4}\.?[4-8]\.?[0-9]{2}\.?[0-9]{4}",
+            "regex": "[0-9]{7}\\-?[0-9]{2}\\.?[0-9]{4}\\.?[4-8]\\.?[0-9]{2}\\.?[0-9]{4}",
             "description": "Processos judiciais com numeração padrão do CNJ, em estrutura formatada (com caracteres especiais) ou não"
         } 
     ]
