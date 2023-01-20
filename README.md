@@ -387,6 +387,12 @@
 (0[1-9]|1[0-9]|2[0-9]|3[0-1])[- | \/](0[1-9]|1[0-2])[- | \/]([0-9]{4})
 ```
 
+## Inscrição Estadual (IE)
+Número de inscrição dado às empresas pelo SEFAZ (Secretária da Fazenda) de cada UF. O comprimento pode variar de 8 a 13 dígitos, dependendo da UF. A REGEX abaixo corresponde ao formato utilizado no estado de São Paulo. Para outros estados, verifique o arquivo JSON na raiz deste repositório.
+```
+^\d{3}.?\d{3}.?\d{3}.?\d{3}$
+```
+
 <br>
 
 # REGEX Genéricas
