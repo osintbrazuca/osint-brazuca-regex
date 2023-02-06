@@ -282,5 +282,11 @@
             "regex": "[0-9]{7}\\-?[0-9]{2}\\.?[0-9]{4}\\.?[4-8]\\.?[0-9]{2}\\.?[0-9]{4}",
             "description": "Processos judiciais com numeração padrão do CNJ, em estrutura formatada (com caracteres especiais) ou não"
         } 
+    ],
+    "numeroDeEndereco": [ 
+        { 
+            "regex": "^(?:s\\/n|S\\/n|S\\/N|s\\/N)|^(\\d)*$",
+            "description": "Número de Endereço (números ou 'S/N', 's/n', 'S/n', 's/N')"
+        } 
     ]
 }
