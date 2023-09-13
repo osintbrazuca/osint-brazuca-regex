@@ -116,6 +116,10 @@
 </details>
 
 
+## Nome Completo
+```
+^[-ʼ'A-ú ]+$
+```
 
 ## RG - Registro Geral 
 ```

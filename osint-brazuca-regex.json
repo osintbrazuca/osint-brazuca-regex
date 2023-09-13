@@ -211,6 +211,12 @@
             "description": "Media Access Control address"
         }
     ],
+    "nomeCompleto": [
+        {
+            "regex": "^[-ʼ'A-ú ]+$",
+            "description": "Nome completo com acento e conectores"
+        }
+    ],
     "passaporte": [
         {
             "regex": "^[A-Z]{2}\\d{6}$",
