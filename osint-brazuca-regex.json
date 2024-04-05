@@ -217,6 +217,12 @@
             "description": "Número do Passaporte"
         }
     ],
+    "pixChave": [
+        {
+            "regex": "([0-9]{14})(br.gov.bcb.(|-)pix).*(6304)([0-9a-zA-Z]{4})",
+            "description": "Chave PIX"
+        }
+    ],
     "pixChaveRandom": [
         {
             "regex": "([a-z\\d]{8})\\-([a-z\\d]{4})\\-([a-z\\d]{4})\\-([a-z\\d]{4})\\-([a-z\\d]{12})",
