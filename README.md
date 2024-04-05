@@ -412,7 +412,7 @@ Número de inscrição dado às empresas pelo SEFAZ (Secretária da Fazenda) de 
 ## URL
 
 ```
-https?:\/\/(www\.)?[^\/]*?\/?([^$]*?$)?
+https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)
 ```
 
 
