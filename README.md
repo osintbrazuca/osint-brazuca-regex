@@ -356,7 +356,7 @@
 
 ## Chave PIX 
 ```
-([0-9]{14})(br.gov.bcb.(|-)pix).*(6304)([0-9a-zA-Z]{4})
+([0-9]{14,20})([bB][rR]\.[gG][oO][vV]\.[bB][cC][bB]\.[pP][iI][xX]).*(6304)([0-9a-zA-Z]{4})
 ```
 
 ## Chave PIX Aleatória
