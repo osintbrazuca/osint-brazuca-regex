@@ -28,6 +28,10 @@
 ```
 ^(\d{2}.?\d{3}.?\d{3}\/?\d{4}\-?\d{2})$
 ```
+## CNPJ Alfanumérico - Cadastro Nacional da Pessoa Jurídica (Válido a partir de Julho de 2026)
+```
+^([A-Za-z0-9]{2}[.]?[A-Za-z0-9]{3}[.]?[A-Za-z0-9]{3}[\/]?[A-Za-z0-9]{4}[-]?\d{2})$
+```
 
 ## CPF - Cadastro de Pessoas Físicas
 ```
