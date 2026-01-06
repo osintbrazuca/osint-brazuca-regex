@@ -306,5 +306,108 @@
             "regex": "^(?:s\\/n|S\\/n|S\\/N|s\\/N)|^(\\d)*$",
             "description": "Número de Endereço (números ou 'S/N', 's/n', 'S/n', 's/N')"
         }
-    ]
+    ],
+
+    "bankAccount": [
+        {
+        "regex": "\\b\\d{4}-[0-9X]\\s+\\d{8}-[0-9X]\\b",
+        "description": "Banco do Brasil – Agência 9999-D | Conta 99999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}-[0-9X]\\s+\\d{7}-[0-9X]\\b",
+        "description": "Bradesco – Agência 9999-D | Conta 9999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+[0-9]{3}\\d{8}-[0-9X]\\b",
+        "description": "Caixa Econômica – Agência 9999 | Operação XXX + Conta 99999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+[0-9]{4}\\d{9}-[0-9X]\\b",
+        "description": "Caixa Econômica – Agência 9999 | Operação XXXX + Conta 999999999-D (Novo formato CP)"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{5}-[0-9X]\\b",
+        "description": "Itaú – Agência 9999 | Conta 99999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
+        "description": "Inter – Agência 9999 | Conta 999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
+        "description": "Santander – Agência 9999 | Conta 99999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
+        "description": "Banrisul – Agência 9999 | Conta 999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{6}\\b",
+        "description": "Sicredi – Agência 9999 | Conta 999999"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
+        "description": "Sicoob (Bancoob) – Agência 9999 | Conta 999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
+        "description": "BRB – Agência 9991 | Conta 999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
+        "description": "PagSeguro – Agência 9999 | Conta 99999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
+        "description": "Safra – Agência 9999 | Conta 99999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
+        "description": "Banco Original – Agência 9999 | Conta 9999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{10}-[0-9X]\\b",
+        "description": "NuBank – Agência 9999 | Conta 9999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
+        "description": "Unicred – Agência 9999 | Conta 99999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
+        "description": "Banco C6 – Agência 9999 | Conta 9999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{11}-[0-9X]\\b",
+        "description": "Via Credi – Agência 9999 | Conta 99999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
+        "description": "Cora – Agência 9999 | Conta 9999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{13}-[0-9X]\\b",
+        "description": "Mercado Pago – Agência 9999 | Conta 9999999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
+        "description": "Next – Agência 9999 | Conta 9999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
+        "description": "Neon / Votorantim – Agência 9999 | Conta 999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{10}-[0-9X]\\b",
+        "description": "PJBank – Agência 9999 | Conta 9999999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{6}-[0-9X]\\b",
+        "description": "BS2 – Agência 9999 | Conta 999999-D"
+        },
+        {
+        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
+        "description": "Stone – Agência 9999 | Conta 9999999-D"
+        }
+  ]
 }
