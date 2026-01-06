@@ -19,23 +19,76 @@
 # Introdução
 **OSINT Brazuca Regex** é um repositório criado com intuito de reunir **expressões regulares** dentro do contexto Brasil 🇧🇷.
 
+> 📄 **Arquivo JSON Completo**: Todas as regex estão disponíveis no arquivo [`osint-brazuca-regex.json`](osint-brazuca-regex.json) para fácil integração em suas ferramentas e scripts.
+
 <br>
 
+# Índice
+- [Documentos Brasileiros](#documentos-brasileiros)
+- [Criptomoedas e Wallets](#criptomoedas-wallets)
+- [Network e Infraestrutura](#network-infraestrutura)
+- [Cartões de Crédito](#cartoes-credito)
+- [Dados Bancários](#dados-bancarios)
+- [Tor e Dark Web](#tor-darkweb)
+- [REGEX Genéricas](#regex-genericas)
+
+<br>
 
 # Documentos Brasileiros
 
 ## CNPJ - Cadastro Nacional da Pessoa Jurídica
 ```
-^(\d{2}.?\d{3}.?\d{3}\/?\d{4}\-?\d{2})$
+([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})
 ```
+
 ## CNPJ Alfanumérico - Cadastro Nacional da Pessoa Jurídica (Válido a partir de Julho de 2026)
 ```
-^([A-Za-z0-9]{2}[.]?[A-Za-z0-9]{3}[.]?[A-Za-z0-9]{3}[\/]?[A-Za-z0-9]{4}[-]?\d{2})$
+^([A-Za-z0-9]{2}[\\.]?[A-Za-z0-9]{3}[\\.]?[A-Za-z0-9]{3}[\\/]?[A-Za-z0-9]{4}[-]?\\d{2})$
 ```
 
 ## CPF - Cadastro de Pessoas Físicas
 ```
-^\d{3}.?\d{3}.?\d{3}\-?\d{2}$
+[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}
+```
+
+## Título de Eleitor
+```
+\\d{4}\\s?\\d{4}\\s?\\d{4}
+```
+
+## PIS/PASEP/NIT - Programa de Integração Social
+```
+\\d{3}\\.?\\d{5}\\.?\\d{2}[-\\s]?\\d{1}
+```
+
+## Cartão SUS - Cartão Nacional de Saúde
+```
+\\d{3}\\s?\\d{4}\\s?\\d{4}\\s?\\d{4}
+```
+
+## CNES - Cadastro Nacional de Estabelecimentos de Saúde
+```
+\\d{7}
+```
+
+## CNS - Cartão Nacional de Saúde (formato validado)
+```
+[1-2]\\d{10}00[0-1]\\d|[7-9]\\d{14}
+```
+
+## CTPS - Carteira de Trabalho e Previdência Social
+```
+\\d{7}\\s?(\\d{5})?
+```
+
+## Código IBGE - Código de Município (7 dígitos)
+```
+\\d{7}
+```
+
+## Inscrição Municipal
+```
+\\d{6,15}
 ```
 ### CPF - Cadastro de Pessoas Físicas por Localidade
 <details>
@@ -358,15 +411,267 @@
 (\d{5}[\.]\d{5}[\s]\d{5}[\.]\d{6}[\s]\d{5}[\.]\d{6}[\s]\d[\s]\d{14})|(\d{47,48})|(\d{12} \d{12} \d{12} \d{12})
 ```
 
-## Chave PIX 
+## Chave NF-e - Chave de Acesso da Nota Fiscal Eletrônica (44 dígitos)
 ```
-([0-9]{14,20})([bB][rR]\.[gG][oO][vV]\.[bB][cC][bB]\.[pP][iI][xX]).*(6304)([0-9a-zA-Z]{4})
+\\d{44}
 ```
 
-## Chave PIX Aleatória
+## ISBN - International Standard Book Number
 ```
-([a-z\d]{8})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{4})\-([a-z\d]{12})
+(?:ISBN(?:-1[03])?:?\\s?)?(?=[0-9X]{10}$|(?=(?:[0-9]+[-\\s]){3})[-\\s0-9X]{13}$|97[89][0-9]{10}$|(?=(?:[0-9]+[-\\s]){4})[-\\s0-9]{17}$)(?:97[89][-\\s]?)?[0-9]{1,5}[-\\s]?[0-9]+[-\\s]?[0-9]+[-\\s]?[0-9X]
 ```
+
+## EAN-13 - Código de Barras de Produtos
+```
+^\\d{13}$
+```
+
+## Rastreamento Correios (formato completo)
+```
+[A-Z]{2}\\d{9}[A-Z]{2}
+```
+
+<br>
+
+# Criptomoedas e Wallets
+
+## Bitcoin (BTC)
+```
+^(bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$
+```
+
+## Ethereum (ETH)
+```
+^0x[a-fA-F0-9]{40}$
+```
+
+## Tether USDT (TRC-20) - Rede Tron
+```
+^T[a-zA-Z0-9]{33}$
+```
+
+## Tether USDT (ERC-20) - Rede Ethereum
+```
+^0x[a-fA-F0-9]{40}$
+```
+
+## BNB (Binance Coin)
+```
+^(bnb1|0x)[a-zA-Z0-9]{38,42}$
+```
+
+## Solana (SOL)
+```
+^[1-9A-HJ-NP-Za-km-z]{32,44}$
+```
+
+## XRP (Ripple)
+```
+^r[a-zA-Z0-9]{24,34}$
+```
+
+## Cardano (ADA)
+```
+^(addr1|stake1)[a-z0-9]{53,}$
+```
+
+## Dogecoin (DOGE)
+```
+^D[5-9A-HJ-NP-U][1-9A-HJ-NP-Za-km-z]{32}$
+```
+
+## Litecoin (LTC)
+```
+^(L|M|ltc1)[a-zA-Z0-9]{26,42}$
+```
+
+## Carteiras Multi-chain (detecção genérica)
+```
+^(0x[a-fA-F0-9]{40}|T[a-zA-Z0-9]{33}|[13][a-zA-Z0-9]{26,35}|bc1[a-z0-9]{39,59})$
+```
+
+<br>
+
+# Network e Infraestrutura
+
+## IPv4
+```
+(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)
+```
+
+## IPv6
+```
+(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+```
+
+## MAC Address
+```
+(?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2})
+```
+
+## Domínio Genérico
+```
+\\b(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}\\b
+```
+
+## Domínio + Subdomínio
+```
+\\b(?:[a-zA-Z0-9-]+\\.){2,}[a-zA-Z]{2,}\\b
+```
+
+## Domínio .br (simplificado)
+```
+\\b(?:[a-zA-Z0-9-]+\\.)+br\\b
+```
+
+## Domínio com Porta
+```
+\\b(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,}:\\d{1,5}\\b
+```
+
+## URL Completa
+```
+\\bhttps?:\\/\\/[^\\s\\/$.?#].[^\\s]*\\b
+```
+
+## URL com Domínio .br
+```
+(?:https?:\\/\\/)?(?:www\\.)?[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?\\.br(?:\\/[^\\s]*)?
+```
+
+## URL Encurtada (bit.ly, t.co, tinyurl, etc)
+```
+\\b(?:bit\\.ly|t\\.co|tinyurl\\.com|goo\\.gl|ow\\.ly|is\\.gd|cutt\\.ly)\\/[a-zA-Z0-9_-]+\\b
+```
+
+## Microsoft Azure Cloud App
+```
+\\b[a-zA-Z0-9-]+\\.cloudapp\\.azure\\.com\\b
+```
+
+## Google Cloud (hostname reverso)
+```
+\\b\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.\\d{1,3}\\.bc\\.googleusercontent\\.com\\b
+```
+
+## Amazon AWS EC2
+```
+\\bec2-\\d{1,3}-\\d{1,3}-\\d{1,3}-\\d{1,3}\\.[a-z0-9-]+\\.compute\\.amazonaws\\.com\\b
+```
+
+## Amazon AWS S3 Bucket
+```
+\\b[a-zA-Z0-9-]+\\.s3\\.[a-z0-9-]+\\.amazonaws\\.com\\b
+```
+
+## Azure Web Apps
+```
+\\b[a-zA-Z0-9-]+\\.azurewebsites\\.net\\b
+```
+
+## Heroku
+```
+\\b[a-zA-Z0-9-]+\\.herokuapp\\.com\\b
+```
+
+## Vercel
+```
+\\b[a-zA-Z0-9-]+\\.vercel\\.app\\b
+```
+
+## Netlify
+```
+\\b[a-zA-Z0-9-]+\\.netlify\\.app\\b
+```
+
+## Google Firebase
+```
+\\b[a-zA-Z0-9-]+\\.firebaseapp\\.com\\b
+```
+
+<br>
+
+# Tor e Dark Web
+
+## Tor Hidden Service v2 (16 caracteres)
+```
+\\b[a-z2-7]{16}\\.onion\\b
+```
+
+## Tor Hidden Service v3 (56 caracteres)
+```
+\\b[a-z2-7]{56}\\.onion\\b
+```
+
+## Tor .onion (v2 ou v3)
+```
+\\b[a-z2-7]{16,56}\\.onion\\b
+```
+
+<br>
+
+# Cartões de Crédito
+
+## Visa
+```
+4[0-9]{12}(?:[0-9]{3})?
+```
+
+## Mastercard
+```
+(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}
+```
+
+## American Express
+```
+3[47][0-9]{13}
+```
+
+## Elo (Brasil)
+```
+(?:4011|4312|4389|4514|4576|5041|5066|5067|6277|6362|6363)[0-9]{12}
+```
+
+## Hipercard (Brasil)
+```
+(?:38|60)[0-9]{11,17}
+```
+
+## Diners Club
+```
+3(?:0[0-5]|[68][0-9])[0-9]{11}
+```
+
+## Cartão Genérico (múltiplas bandeiras)
+```
+(?:4[0-9]{12}(?:[0-9]{3})?|(?:5[1-5][0-9]{2}|222[1-9]|22[3-9][0-9]|2[3-6][0-9]{2}|27[01][0-9]|2720)[0-9]{12}|3[47][0-9]{13}|3(?:0[0-5]|[68][0-9])[0-9]{11}|6(?:011|5[0-9]{2})[0-9]{12}|(?:2131|1800|35\\d{3})\\d{11})
+```
+
+## Cartão com Separadores (#### #### #### ####)
+```
+(?:[0-9]{4}[\\s-]?){3}[0-9]{4}
+```
+
+<br>
+
+# Dados Bancários
+
+O arquivo JSON contém regex para contas bancárias de 26 instituições brasileiras, incluindo:
+- Banco do Brasil
+- Bradesco
+- Caixa Econômica Federal
+- Itaú
+- Santander
+- Nubank
+- Inter
+- C6 Bank
+- Neon
+- PagSeguro
+- Entre outros...
+
+> Consulte o arquivo [`osint-brazuca-regex.json`](osint-brazuca-regex.json) para ver todas as regex de contas bancárias.
+
+<br>
 
 ## Passaporte
 ```
@@ -402,80 +707,67 @@ Número de inscrição dado às empresas pelo SEFAZ (Secretária da Fazenda) de 
 ^\d{3}.?\d{3}.?\d{3}.?\d{3}$
 ```
 
-<br>
 
 # REGEX Genéricas
 
-
-## Bitcoin
-
-```
-^(bc1|[13])[a-zA-HJ-NP-Z0-9]{25,39}$
-```
-
-## URL
-
-```
-https?:\\/\\/(www\\.)?[-a-zA-Z0-9@:%._\\+~#=]{1,256}\\.[a-zA-Z0-9()]{1,6}\\b([-a-zA-Z0-9()!@:%_\\+.~#?&\\/\\/=]*)
-```
-
-
 ## Email
-
 ```
-([\w._%+-]+)(@|\s@\s|\sat\s|\[at\])([\w.-]+)\.([\w]{2,})
-```
-
-## IP
-
-```
-[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}\.[[:digit:]]{1,3}
+([\\w._%+-]+)(@|\\s@\\s|\\sat\\s|\\[at\\])([\\w.-]+)\\.([\\w]{2,})
 ```
 
-## IPv6
-
+## Telefone Brasil
 ```
-(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))
+(?:(?:(\\+|00)?(55))\\s?)?(?:\\(?(\\d{2})\\)?\\s?)(|\\d{2})(|-)?(?:(9\\d|[2-9])\\d{3}[-|.|\\s]?(\\d{4}))
 ```
 
-## Mac Address
-
+## Data (dd-mm-yyyy | dd/mm/yyyy)
 ```
-(?:[0-9A-Fa-f]{2}[:-]){5}(?:[0-9A-Fa-f]{2})
+([0-9]{2})[-|\\/]([0-9]{2})[-|\\/]([0-9]{4})
 ```
 
 ## Hora formato 12h
-
 ```
 ((0?[1-9]|1[0-2]):([0-5][0-9].?([a].?[m].?|[p].?[m].?)))
 ```
 
 ## Hora formato 24h
-
 ```
 ([01][0-9]|[2][0-3]):([0-5][0-9])
 ```
 
-## Senha (8-20 dígitos, letras maiúsculas, minúsculas, números e caracteres especiais)
-
+## UUID (Universally Unique Identifiers)
 ```
-^(?=.*[A-Z])(?=.*[a-z])(?=.*[\d])(?=.*[@#$%&*!-+&*]).{8,20}$
+^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[8|9|aA|bB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}$
+```
+
+## Validador de Senha (8-20 dígitos, maiúsculas, minúsculas, números e especiais)
+```
+(?=.*[A-Z])(?=.*[a-z])(?=.*[\\d])(?=.*[@#$%&*!-+&*]).{8,20}
 ```
 
 ## Latitude e Longitude
+```
+(\\+|-)?(?:180(?:(?:\\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\\.[0-9]{1,6})?))
+```
 
+## Chave PIX
 ```
-(\+|-)?(?:180(?:(?:\.0{1,6})?)|(?:[0-9]|[1-9][0-9]|1[0-7][0-9])(?:(?:\.[0-9]{1,6})?))
+([0-9]{14,20})([bB][rR]\\.[gG][oO][vV]\\.[bB][cC][bB]\\.[pP][iI][xX]).*(6304)([0-9a-zA-Z]{4})
 ```
 
-## UUID
+## Chave PIX Aleatória
 ```
-(^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[8|9|aA|bB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}$)
+([a-z\\d]{8})\\-([a-z\\d]{4})\\-([a-z\\d]{4})\\-([a-z\\d]{4})\\-([a-z\\d]{12})
+```
+
+## Processo CNJ (Conselho Nacional de Justiça)
+```
+[0-9]{7}\\-?[0-9]{2}\\.?[0-9]{4}\\.?[4-8]\\.?[0-9]{2}\\.?[0-9]{4}
 ```
 
 ## Número de Endereço (números ou "S/N", "s/n", "S/n", "s/N")
 ```
-^(?:s\/n|S\/n|S\/N|s\/N)|^(\d)*$
+^(?:s\\/n|S\\/n|S\\/N|s\\/N)|^(\\d)*$
 ```
 
 <br>
