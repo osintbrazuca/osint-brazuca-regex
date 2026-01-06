@@ -17,7 +17,7 @@
 
 
 # Introdução
-**OSINT Brazuca Regex** é um repositório criado com intuito de reunir **expressões regulares** dentro do contexto Brasil 🇧🇷.
+**OSINT Brazuca Regex** é um repositório criado com intuito de reunir **expressões regulares** dentro do contexto Brasil 🇧🇷 e Geral.
 
 > 📄 **Arquivo JSON Completo**: Todas as regex estão disponíveis no arquivo [`osint-brazuca-regex.json`](osint-brazuca-regex.json) para fácil integração em suas ferramentas e scripts.
 
