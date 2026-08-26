@@ -1,0 +1,22 @@
+{
+    "meus_vips": [
+        {
+            "regex": "(vip_01|vip_02)",
+            "description": "Value vip_01 or vip_02"
+        },
+        {
+            "regex": "(nome vip|nome vip_02)",
+            "description": "Value nome vip or nome vip_02"
+        }
+    ],
+    "minha_empresa": [
+        {
+            "regex": "minha_empresa",
+            "description": "Value minha_empresa"
+        },
+        {
+            "regex": "(minha_empresa_dado_01|minha_empresa_dado_02)",
+            "description": "Value minha_empresa_dado_01 or minha_empresa_dado_02"
+        }
+    ]
+}

@@ -6,15 +6,11 @@
         },
         {
             "regex": "^0x[a-fA-F0-9]{40}$",
-            "description": "Ethereum (ETH) - Endereço de carteira"
+            "description": "Ethereum e tokens ERC-20 (ETH, USDT, USDC) - endereço EVM, válido também em Polygon/BSC/Arbitrum"
         },
         {
             "regex": "^T[a-zA-Z0-9]{33}$",
             "description": "Tether USDT (TRC-20) - Endereço na rede Tron"
-        },
-        {
-            "regex": "^0x[a-fA-F0-9]{40}$",
-            "description": "Tether USDT (ERC-20) - Endereço na rede Ethereum"
         },
         {
             "regex": "^(bnb1|0x)[a-zA-Z0-9]{38,42}$",
@@ -43,188 +39,36 @@
         {
             "regex": "^(0x[a-fA-F0-9]{40}|T[a-zA-Z0-9]{33}|[13][a-zA-Z0-9]{26,35}|bc1[a-z0-9]{39,59})$",
             "description": "Carteiras multi-chain (ETH/USDT/BTC) - Detecção genérica"
-        }
-    ],
-    "boleto": [
+        },
         {
-            "regex": "(\\d{5}[\\.]\\d{5}[\\s]\\d{5}[\\.]\\d{6}[\\s]\\d{5}[\\.]\\d{6}[\\s]\\d[\\s]\\d{14})|(\\d{47,48})|(\\d{12} \\d{12} \\d{12} \\d{12})",
-            "description": "Boleto Bancário e Linha Digitável"
-        }
-    ],
-    "cadastur": [
+            "regex": "\\b[48][0-9AB][1-9A-HJ-NP-Za-km-z]{93}\\b",
+            "description": "Monero (XMR) - Endereço padrão (4...) ou subendereço (8...)"
+        },
         {
-            "regex": "([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\/]?[0-9]{4}[-]?[0-9]{2})",
-            "description": "Cadastro de Prestadores de Serviços Turísticos"
-        }
-    ],
-    "cep": [
+            "regex": "\\bbc1p[023456789acdefghjklmnpqrstuvwxyz]{58}\\b",
+            "description": "Bitcoin Taproot (BTC) - Endereço bech32m (bc1p)"
+        },
         {
-            "regex": "(^[0-9]{5})-?([0-9]{3}$)",
-            "description": "Código de Endereçamento Postal "
-        }
-    ],
-    "cnpj": [
+            "regex": "\\b(?:xpub|ypub|zpub|xprv|yprv|zprv)[1-9A-HJ-NP-Za-km-z]{107,108}\\b",
+            "description": "Chave estendida BIP-32 (xpub/ypub/zpub e privadas xprv/yprv/zprv)"
+        },
         {
-            "regex": "([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})",
-            "description": "Cadastro Nacional da Pessoa Jurídica"
-        }
-    ],
-    "cnpjAlfanumerico": [
+            "regex": "\\bG[A-Z2-7]{55}\\b",
+            "description": "Stellar (XLM) - Endereço de carteira"
+        },
         {
-            "regex": "^([A-Za-z0-9]{2}[\\.]?[A-Za-z0-9]{3}[\\.]?[A-Za-z0-9]{3}[\\/]?[A-Za-z0-9]{4}[-]?\\d{2})$",
-            "description": "Cadastro Nacional da Pessoa Jurídica válido a partir de Julho de 2026"
-        }
-    ],
-    "cnpjOuCpf": [
+            "regex": "\\b(?:bitcoincash:)?[qp][a-z0-9]{41}\\b",
+            "description": "Bitcoin Cash (BCH) - Endereço CashAddr"
+        },
         {
-            "regex": "^(([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})|[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2})$",
-            "description": "Cadastro de Pessoas Físicas ou Jurídicas"
-        }
-    ],
-    "cnpjAlfanamuericoOuCpf": [
-        {
-            "regex": "^(([A-Za-z0-9]{2}[\\.]?[A-Za-z0-9]{3}[\\.]?[A-Za-z0-9]{3}[\\/]?[A-Za-z0-9]{4}[-]?\\d{2})|[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2})$",
-            "description": "Cadastro de Pessoas Físicas ou Cadastro de Pessoas Jurídicas válido a partir de Julho de 2026"
-        }
-    ],
-    "cnh": [
-        {
-            "regex": "((cnh.*[0-9]{11})|(CNH.*[0-9]{11})|(habilitação.*[0-9]{11})|(carteira.*[0-9]{11}))",
-            "description": "Carteira Nacional de Habilitação"
-        }
-    ],
-    "correios": [
-        {
-            "regex": "/^[A-Z]{2}[0-9]{9}BR$/i",
-            "description": "Código de rastreamento de encomenda dos Correios"
-        }
-    ],
-    "cpf": [
-        {
-            "regex": "[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2}",
-            "description": "Cadastro de Pessoas Físicas"
-        }
-    ],
-    "crm": [
-        {
-            "regex": "([0-9-\/]{5,11})(?i)[a-z]{2}",
-            "description": "Conselho Federal de Medicina"
+            "regex": "\\b(?:[a-z]{3,8}\\s+){11}[a-z]{3,8}\\b",
+            "description": "Seed phrase BIP-39 (12 palavras) - alto recall, exige validação contra a wordlist oficial"
         }
     ],
     "data": [
         {
-            "regex": "([0-9]{2})[-|\/]([0-9]{2})[-|\/]([0-9]{4})",
-            "description": "Data dd-mm-yyyy | dd/mm/yyyy"
-        }
-    ],
-    "ie": [
-        {
-            "regex": "^(01).?\\d{3}.?\\d{3}\/?\\d{3}\\-?\\d{2}$",
-            "description": "AC"
-        },
-        {
-            "regex": "^(24)(0|3|5|7|8)\\d{6}$",
-            "description": "AL"
-        },
-        {
-            "regex": "^(03)\\d{7}$",
-            "description": "AP"
-        },
-        {
-            "regex": "^\\d{2}.?\\d{3}.?\\d{3}\\-?\\d{1}$",
-            "description": "AM, GO"
-        },
-        {
-            "regex": "^\\d{7}\\-?\\d{2}$",
-            "description": "BA (9 dígitos), PE"
-        },
-        {
-            "regex": "^\\d{6}\\-?\\d{2}$",
-            "description": "BA (8 dígitos)"
-        },
-        {
-            "regex": "^\\d{8}\\-?\\d{1}$",
-            "description": "CE, PA"
-        },
-        {
-            "regex": "^\\d{8}\\-?\\d{2}$",
-            "description": "DF"
-        },
-        {
-            "regex": "^\\d{9}$",
-            "description": "ES, PI"
-        },
-        {
-            "regex": "^(12)\\d{7}$",
-            "description": "MA"
-        },
-        {
-            "regex": "^\\d{10}\\-?\\d{1}$",
-            "description": "MT"
-        },
-        {
-            "regex": "^(28)\\d{7}$",
-            "description": "MS"
-        },
-        {
-            "regex": "^\\d{3}.?\\d{3}.?\\d{3}\/?\\d{4}$",
-            "description": "MG"
-        },
-        {
-            "regex": "^(15)\\d{6}\\-?\\d{1}$",
-            "description": "PA"
-        },
-        {
-            "regex": "^\\d{3}.?\\d{5}\\-?\\d{2}$",
-            "description": "PR"
-        },
-        {
-            "regex": "^\\d{2}.?\\d{3}.?\\d{2}\\-?\\d{1}$",
-            "description": "RJ"
-        },
-        {
-            "regex": "^(20).?\\d{3}.?\\d{3}\\-?\\d{1}$",
-            "description": "RN (9 dígitos)"
-        },
-        {
-            "regex": "^(20).?\\d{1}.?\\d{3}.?\\d{3}\\-?\\d{1}$",
-            "description": "RN (10 dígitos)"
-        },
-        {
-            "regex": "^\\d{3}\/?\\d{7}$",
-            "description": "RS"
-        },
-        {
-            "regex": "^\\d{3}.?\\d{5}\\-?\\d{1}$",
-            "description": "RO (antes de 01/08/2000)"
-        },
-        {
-            "regex": "^\\d{13}\\-?\\d{1}$",
-            "description": "RO (a partir de 01/08/2000)"
-        },
-        {
-            "regex": "^(24)\\d{6}\\-?\\d{1}$",
-            "description": "RR"
-        },
-        {
-            "regex": "^\\d{3}.?\\d{3}.?\\d{3}$",
-            "description": "SC"
-        },
-        {
-            "regex": "^\\d{3}.?\\d{3}.?\\d{3}.?\\d{3}$",
-            "description": "SP"
-        },
-        {
-            "regex": "^(P)\\-?\\d{8}.?\\d\/?\\d{3}$",
-            "description": "SP (Produtor Rural)"
-        },
-        {
-            "regex": "^\\d{8}\\-?\\d{1}$",
-            "description": "SE"
-        },
-        {
-            "regex": "^(29)(01|02|03|99)\\d{7}$",
-            "description": "TO"
+            "regex": "\\b(0[1-9]|[12]\\d|3[01])[\\/.-](0[1-9]|1[0-2])[\\/.-](19|20)\\d{2}\\b",
+            "description": "Data dd-mm-yyyy | dd/mm/yyyy | dd.mm.yyyy"
         }
     ],
     "email": [
@@ -235,7 +79,7 @@
     ],
     "hora12": [
         {
-            "regex": "((0?[1-9]|1[0-2]):([0-5][0-9].?([a].?[m].?|[p].?[m].?)))",
+            "regex": "\\b(0?[1-9]|1[0-2]):[0-5][0-9]\\s?[AaPp]\\.?[Mm]\\.?",
             "description": "Hora no formato 12h"
         }
     ],
@@ -245,11 +89,10 @@
             "description": "Hora no formato 24h"
         }
     ],
-
     "network": [
         {
-            "regex": "(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)",
-            "description": "IPv4 - Endereço IP versão 4"
+            "regex": "(?<![\\d.])(?:(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)\\.){3}(?:25[0-5]|2[0-4][0-9]|[01]?[0-9][0-9]?)(?!\\.\\d)",
+            "description": "IPv4 - Endereço IP versão 4 (não casa dentro de sequências pontuadas maiores)"
         },
         {
             "regex": "(([0-9a-fA-F]{1,4}:){7,7}[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,7}:|([0-9a-fA-F]{1,4}:){1,6}:[0-9a-fA-F]{1,4}|([0-9a-fA-F]{1,4}:){1,5}(:[0-9a-fA-F]{1,4}){1,2}|([0-9a-fA-F]{1,4}:){1,4}(:[0-9a-fA-F]{1,4}){1,3}|([0-9a-fA-F]{1,4}:){1,3}(:[0-9a-fA-F]{1,4}){1,4}|([0-9a-fA-F]{1,4}:){1,2}(:[0-9a-fA-F]{1,4}){1,5}|[0-9a-fA-F]{1,4}:((:[0-9a-fA-F]{1,4}){1,6})|:((:[0-9a-fA-F]{1,4}){1,7}|:)|fe80:(:[0-9a-fA-F]{0,4}){0,4}%[0-9a-zA-Z]{1,}|::(ffff(:0{1,4}){0,1}:){0,1}((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])|([0-9a-fA-F]{1,4}:){1,4}:((25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9])\\.){3,3}(25[0-5]|(2[0-4]|1{0,1}[0-9]){0,1}[0-9]))",
@@ -298,9 +141,16 @@
         {
             "regex": "\\b(?:bit\\.ly|t\\.co|tinyurl\\.com|goo\\.gl|ow\\.ly|is\\.gd|cutt\\.ly)\\/[a-zA-Z0-9_-]+\\b",
             "description": "URL Encurtada - Serviços de encurtamento de URL (bit.ly, t.co, etc)"
+        },
+        {
+            "regex": "\\b(?:\\d{1,3}\\.){3}\\d{1,3}\\/(?:3[0-2]|[12]?\\d)\\b",
+            "description": "CIDR IPv4 - Bloco de rede"
+        },
+        {
+            "regex": "\\bAS\\d{1,10}\\b",
+            "description": "ASN - Número de Sistema Autônomo"
         }
     ],
-
     "infraCloud": [
         {
             "regex": "\\b[a-zA-Z0-9-]+\\.cloudapp\\.azure\\.com\\b",
@@ -341,9 +191,56 @@
         {
             "regex": "\\b[a-zA-Z0-9-]+\\.firebaseapp\\.com\\b",
             "description": "Google Firebase - Aplicações Firebase"
+        },
+        {
+            "regex": "\\b[a-z0-9]+\\.cloudfront\\.net\\b",
+            "description": "Amazon AWS - Distribuição CloudFront"
+        },
+        {
+            "regex": "\\b[a-z0-9]{32,}\\.lambda-url\\.[a-z0-9-]+\\.on\\.aws\\b",
+            "description": "Amazon AWS - Lambda Function URL"
+        },
+        {
+            "regex": "\\b[a-zA-Z0-9-]+\\.(?:workers\\.dev|pages\\.dev)\\b",
+            "description": "Cloudflare - Workers e Pages"
+        },
+        {
+            "regex": "\\b[a-z0-9]+\\.blob\\.core\\.windows\\.net\\b",
+            "description": "Microsoft Azure - Blob Storage"
+        },
+        {
+            "regex": "\\bstorage\\.googleapis\\.com\\/[a-z0-9._-]{3,63}\\b",
+            "description": "Google Cloud - Bucket do Cloud Storage"
+        },
+        {
+            "regex": "\\b[a-zA-Z0-9-]+\\.web\\.app\\b",
+            "description": "Google Firebase - Hosting (web.app)"
+        },
+        {
+            "regex": "\\b[a-zA-Z0-9-]+\\.onrender\\.com\\b",
+            "description": "Render - Aplicações hospedadas"
+        },
+        {
+            "regex": "\\b[a-zA-Z0-9-]+\\.up\\.railway\\.app\\b",
+            "description": "Railway - Aplicações hospedadas"
+        },
+        {
+            "regex": "\\b[a-zA-Z0-9-]+\\.fly\\.dev\\b",
+            "description": "Fly.io - Aplicações hospedadas"
+        },
+        {
+            "regex": "\\b[a-zA-Z0-9-]+\\.ondigitalocean\\.app\\b",
+            "description": "DigitalOcean - App Platform"
+        },
+        {
+            "regex": "\\b[a-zA-Z0-9-]+\\.github\\.io\\b",
+            "description": "GitHub Pages - Sites estáticos"
+        },
+        {
+            "regex": "\\b[a-z0-9]{20}\\.supabase\\.co\\b",
+            "description": "Supabase - Projeto hospedado"
         }
     ],
-
     "torDarkWeb": [
         {
             "regex": "\\b[a-z2-7]{16}\\.onion\\b",
@@ -358,7 +255,6 @@
             "description": "Tor Hidden Service - Qualquer endereço .onion (v2 ou v3)"
         }
     ],
-
     "creditCard": [
         {
             "regex": "4[0-9]{12}(?:[0-9]{3})?",
@@ -373,14 +269,6 @@
             "description": "American Express - Cartão de crédito (15 dígitos começando com 34 ou 37)"
         },
         {
-            "regex": "(?:4011|4312|4389|4514|4576|5041|5066|5067|6277|6362|6363)[0-9]{12}",
-            "description": "Elo - Cartão de crédito brasileiro (16 dígitos)"
-        },
-        {
-            "regex": "(?:38|60)[0-9]{11,17}",
-            "description": "Hipercard - Cartão de crédito brasileiro"
-        },
-        {
             "regex": "3(?:0[0-5]|[68][0-9])[0-9]{11}",
             "description": "Diners Club - Cartão de crédito (14 dígitos)"
         },
@@ -393,210 +281,16 @@
             "description": "Cartão de Crédito - Formato com espaços ou hífens (#### #### #### ####)"
         }
     ],
-    "passaporte": [
-        {
-            "regex": "^[A-Z]{2}\\d{6}$",
-            "description": "Número do Passaporte"
-        }
-    ],
-    "pixChave": [
-        {
-            "regex": "([0-9]{14,20})([bB][rR]\\.[gG][oO][vV]\\.[bB][cC][bB]\\.[pP][iI][xX]).*(6304)([0-9a-zA-Z]{4})",
-            "description": "Chave PIX"
-        }
-    ],
-    "pixChaveRandom": [
-        {
-            "regex": "([a-z\\d]{8})\\-([a-z\\d]{4})\\-([a-z\\d]{4})\\-([a-z\\d]{4})\\-([a-z\\d]{12})",
-            "description": "Chave PIX Aleatória"
-        }
-    ],
-    "placaDetran": [
-        {
-            "regex": "[A-Z]{3}\\d[0-9A-Z]\\d{2}",
-            "description": "Placas de Carros e Motos Brasileiras (incluindo Mercosul)"
-        }
-    ],
-    "renavam": [
-        {
-            "regex": "((\\d{4})[.](\\d{6})-(\\d{1})|(\\d{4})(\\d{6})(\\d{1}))",
-            "description": "Registro Nacional de Veículos Automotores"
-        }
-    ],
-    "rg": [
-        {
-            "regex": "(\\d{1,2}\\.?)(\\d{3}\\.?)(\\d{3})(\\-?[0-9Xx]{1})",
-            "description": "Registro Geral"
-        }
-    ],
-    "rne": [
-        {
-            "regex": "(RNE)([A-Z\\d])(\\d{6})([A-Z\\d])",
-            "description": "Registro Nacional de Estrangeiro"
-        }
-    ],
-    "siglaUF": [
-        {
-            "regex": "(AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO|BR)",
-            "description": "Siglas das Unidades Federativas do Brasil"
-        }
-    ],
-    "telefone": [
-        {
-            "regex": "(?:(?:(\\+|00)?(55))\\s?)?(?:\\(?(\\d{2})\\)?\\s?)(|\\d{2})(|-)?(?:(9\\d|[2-9])\\d{3}[-|.|\\s]?(\\d{4}))",
-            "description": "Telefone Brasil"
-        }
-    ],
     "UUID": [
         {
-            "regex": "^[a-fA-F0-9]{8}-[a-fA-F0-9]{4}-4[a-fA-F0-9]{3}-[8|9|aA|bB][a-fA-F0-9]{3}-[a-fA-F0-9]{12}$",
-            "description": "UUID - Universally Unique Identifiers"
+            "regex": "\\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[1-8][0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}\\b",
+            "description": "UUID - Universally Unique Identifiers (versões 1 a 8)"
         }
     ],
     "verificacaoDeSenha": [
         {
-            "regex": "(?=.*[A-Z])(?=.*[a-z])(?=.*[\\d])(?=.*[@#$%&*!-+&*]).{8,20}",
+            "regex": "(?=.*[A-Z])(?=.*[a-z])(?=.*\\d)(?=.*[@#$%&*!+\\-]).{8,20}",
             "description": "Validador de senhas com tamanho entre 8 e 20 dígitos e com letras maiúsculas, minúsculas, números e caracteres especiais"
-        }
-    ],
-    "processoCnj": [
-        {
-            "regex": "[0-9]{7}\\-?[0-9]{2}\\.?[0-9]{4}\\.?[4-8]\\.?[0-9]{2}\\.?[0-9]{4}",
-            "description": "Processos judiciais com numeração padrão do CNJ, em estrutura formatada (com caracteres especiais) ou não"
-        }
-    ],
-    "numeroDeEndereco": [
-        {
-            "regex": "^(?:s\\/n|S\\/n|S\\/N|s\\/N)|^(\\d)*$",
-            "description": "Número de Endereço (números ou 'S/N', 's/n', 'S/n', 's/N')"
-        }
-    ],
-
-    "bankAccount": [
-        {
-        "regex": "\\b\\d{4}-[0-9X]\\s+\\d{8}-[0-9X]\\b",
-        "description": "Banco do Brasil – Agência 9999-D | Conta 99999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}-[0-9X]\\s+\\d{7}-[0-9X]\\b",
-        "description": "Bradesco – Agência 9999-D | Conta 9999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+[0-9]{3}\\d{8}-[0-9X]\\b",
-        "description": "Caixa Econômica – Agência 9999 | Operação XXX + Conta 99999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+[0-9]{4}\\d{9}-[0-9X]\\b",
-        "description": "Caixa Econômica – Agência 9999 | Operação XXXX + Conta 999999999-D (Novo formato CP)"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{5}-[0-9X]\\b",
-        "description": "Itaú – Agência 9999 | Conta 99999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
-        "description": "Inter – Agência 9999 | Conta 999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
-        "description": "Santander – Agência 9999 | Conta 99999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
-        "description": "Banrisul – Agência 9999 | Conta 999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{6}\\b",
-        "description": "Sicredi – Agência 9999 | Conta 999999"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
-        "description": "Sicoob (Bancoob) – Agência 9999 | Conta 999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
-        "description": "BRB – Agência 9991 | Conta 999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
-        "description": "PagSeguro – Agência 9999 | Conta 99999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
-        "description": "Safra – Agência 9999 | Conta 99999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
-        "description": "Banco Original – Agência 9999 | Conta 9999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{10}-[0-9X]\\b",
-        "description": "NuBank – Agência 9999 | Conta 9999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
-        "description": "Unicred – Agência 9999 | Conta 99999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
-        "description": "Banco C6 – Agência 9999 | Conta 9999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{11}-[0-9X]\\b",
-        "description": "Via Credi – Agência 9999 | Conta 99999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
-        "description": "Cora – Agência 9999 | Conta 9999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{13}-[0-9X]\\b",
-        "description": "Mercado Pago – Agência 9999 | Conta 9999999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
-        "description": "Next – Agência 9999 | Conta 9999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
-        "description": "Neon / Votorantim – Agência 9999 | Conta 999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{10}-[0-9X]\\b",
-        "description": "PJBank – Agência 9999 | Conta 9999999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{6}-[0-9X]\\b",
-        "description": "BS2 – Agência 9999 | Conta 999999-D"
-        },
-        {
-        "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
-        "description": "Stone – Agência 9999 | Conta 9999999-D"
-        }
-  ],
-
-    "tituloEleitor": [
-        {
-            "regex": "\\d{4}\\s?\\d{4}\\s?\\d{4}",
-            "description": "Título de Eleitor - 12 dígitos"
-        }
-    ],
-    "pisPasep": [
-        {
-            "regex": "\\d{3}\\.?\\d{5}\\.?\\d{2}[-\\s]?\\d{1}",
-            "description": "PIS/PASEP/NIT - Programa de Integração Social"
-        }
-    ],
-    "cartaoSus": [
-        {
-            "regex": "\\d{3}\\s?\\d{4}\\s?\\d{4}\\s?\\d{4}",
-            "description": "Cartão Nacional de Saúde - SUS"
-        }
-    ],
-    "cnes": [
-        {
-            "regex": "\\d{7}",
-            "description": "Cadastro Nacional de Estabelecimentos de Saúde"
         }
     ],
     "isbn": [
@@ -605,64 +299,23 @@
             "description": "International Standard Book Number"
         }
     ],
-    "inscricaoMunicipal": [
-        {
-            "regex": "\\d{6,15}",
-            "description": "Inscrição Municipal - varia por município"
-        }
-    ],
-    "codigoIbge": [
-        {
-            "regex": "\\d{7}",
-            "description": "Código IBGE de Município - 7 dígitos"
-        }
-    ],
-    "cns": [
-        {
-            "regex": "[1-2]\\d{10}00[0-1]\\d|[7-9]\\d{14}",
-            "description": "Cartão Nacional de Saúde - formato validado"
-        }
-    ],
-    "ctps": [
-        {
-            "regex": "\\d{7}\\s?(\\d{5})?",
-            "description": "Carteira de Trabalho e Previdência Social"
-        }
-    ],
-    "rastreamentoCorreios": [
-        {
-            "regex": "[A-Z]{2}\\d{9}[A-Z]{2}",
-            "description": "Código de rastreamento dos Correios (formato completo)"
-        }
-    ],
-    "chaveNfe": [
-        {
-            "regex": "\\d{44}",
-            "description": "Chave de Acesso da Nota Fiscal Eletrônica - 44 dígitos"
-        }
-    ],
     "ean13": [
         {
             "regex": "^\\d{13}$",
             "description": "Código de Barras EAN-13 - produtos"
         }
     ],
-
     "socialMedia": [
-        {
-            "regex": "(?:whatsapp\\.com\\/|wa\\.me\\/|api\\.whatsapp\\.com\\/send\\?phone=)(?:\\+?55)?\\s?\\(?\\d{2}\\)?\\s?9?\\d{4}[-\\s]?\\d{4}",
-            "description": "WhatsApp - Links com número brasileiro"
-        },
         {
             "regex": "(?:t\\.me\\/|telegram\\.me\\/|telegram\\.dog\\/)([a-zA-Z0-9_]{5,32})",
             "description": "Telegram - Links e usernames"
         },
         {
-            "regex": "(?:instagram\\.com\\/|instagr\\.am\\/)([a-zA-Z0-9_\\.]{1,30})",
+            "regex": "instagram\\.com\\/(?!p\\/|reel\\/|reels\\/|stories\\/|explore\\/|tv\\/)([A-Za-z0-9_.]{1,30})",
             "description": "Instagram - Perfis"
         },
         {
-            "regex": "(?:twitter\\.com\\/|x\\.com\\/)([a-zA-Z0-9_]{1,15})",
+            "regex": "(?:twitter\\.com|x\\.com)\\/(?!status\\/|i\\/|search|hashtag\\/|home)([A-Za-z0-9_]{1,15})",
             "description": "Twitter/X - Perfis"
         },
         {
@@ -678,11 +331,46 @@
             "description": "TikTok - Perfis"
         },
         {
-            "regex": "(?:youtube\\.com\\/|youtu\\.be\\/)(?:@|user\\/|channel\\/)([a-zA-Z0-9_\\-]{1,})",
+            "regex": "(?:youtube\\.com\\/(?:@|c\\/|user\\/|channel\\/)|youtu\\.be\\/)([A-Za-z0-9_-]{1,})",
             "description": "YouTube - Canais e usuários"
+        },
+        {
+            "regex": "chat\\.whatsapp\\.com\\/(?:invite\\/)?[A-Za-z0-9]{20,24}",
+            "description": "WhatsApp - Convite de grupo"
+        },
+        {
+            "regex": "t\\.me\\/(?:joinchat\\/|\\+)[A-Za-z0-9_-]{16,}",
+            "description": "Telegram - Convite de canal ou grupo privado"
+        },
+        {
+            "regex": "(?:discord\\.gg|discord(?:app)?\\.com\\/invite)\\/[A-Za-z0-9-]{2,32}",
+            "description": "Discord - Convite de servidor"
+        },
+        {
+            "regex": "github\\.com\\/(?!orgs\\/|topics\\/|search|features\\/)([A-Za-z0-9-]{1,39})\\b",
+            "description": "GitHub - Perfis e organizações"
+        },
+        {
+            "regex": "reddit\\.com\\/(?:user|u)\\/([A-Za-z0-9_-]{3,20})",
+            "description": "Reddit - Perfis"
+        },
+        {
+            "regex": "bsky\\.app\\/profile\\/([A-Za-z0-9.-]{3,253})",
+            "description": "Bluesky - Perfis"
+        },
+        {
+            "regex": "threads\\.(?:net|com)\\/@([A-Za-z0-9_.]{1,30})",
+            "description": "Threads - Perfis"
+        },
+        {
+            "regex": "twitch\\.tv\\/(?!videos\\/|directory\\/)([A-Za-z0-9_]{4,25})",
+            "description": "Twitch - Canais"
+        },
+        {
+            "regex": "(?:kwai\\.com|kwai-video\\.com)\\/@?([A-Za-z0-9_.-]{3,30})",
+            "description": "Kwai - Perfis"
         }
     ],
-
     "financialInternational": [
         {
             "regex": "^[A-Z]{6}[A-Z0-9]{2}([A-Z0-9]{3})?$",
@@ -693,44 +381,12 @@
             "description": "IBAN - International Bank Account Number"
         }
     ],
-
     "vehicles": [
         {
             "regex": "^[A-HJ-NPR-Z0-9]{17}$",
             "description": "Chassis (VIN) - Número de identificação do veículo (17 caracteres)"
-        },
-        {
-            "regex": "\\b\\d{8}\\b",
-            "description": "ANTT - Registro de transportador"
         }
     ],
-
-    "business": [
-        {
-            "regex": "\\d{2}\\.\\d{3}\\.\\d{3}\\/\\d{4}",
-            "description": "SUFRAMA - Superintendência da Zona Franca de Manaus"
-        },
-        {
-            "regex": "\\b\\d{7}\\b",
-            "description": "CAGED - Cadastro Geral de Empregados e Desempregados"
-        },
-        {
-            "regex": "\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}\\/\\d{2}",
-            "description": "CAEPF - Cadastro de Atividade Econômica da Pessoa Física"
-        }
-    ],
-
-    "education": [
-        {
-            "regex": "\\d{12}",
-            "description": "ENEM - Número de inscrição (12 dígitos)"
-        },
-        {
-            "regex": "\\b(CR[A-Z]{1,3})\\s?\\d{4,10}[\\/\\-]?[A-Z]{2}\\b",
-            "description": "Registro Profissional - CREA, CRO, CRC, COREN, etc"
-        }
-    ],
-
     "security": [
         {
             "regex": "\\b[a-fA-F0-9]{32}\\b",
@@ -747,9 +403,16 @@
         {
             "regex": "eyJ[A-Za-z0-9\\-_=]+\\.eyJ[A-Za-z0-9\\-_=]+\\.[A-Za-z0-9\\-_.+\\/=]*",
             "description": "JWT Token - JSON Web Token"
+        },
+        {
+            "regex": "\\$2[aby]?\\$\\d{2}\\$[.\\/A-Za-z0-9]{53}",
+            "description": "Hash bcrypt"
+        },
+        {
+            "regex": "\\b[a-fA-F0-9]{128}\\b",
+            "description": "Hash SHA-512 - 128 caracteres hexadecimais"
         }
     ],
-
     "apiCredentials": [
         {
             "regex": "(?:A3T[A-Z0-9]|AKIA|AGPA|AIDA|AROA|AIPA|ANPA|ANVA|ASIA)[A-Z0-9]{16}",
@@ -788,7 +451,7 @@
             "description": "GitHub OAuth Access Token"
         },
         {
-            "regex": "[a-f0-9]{40}",
+            "regex": "(?i)(?:github|gh)(?:.{0,20})?['\\\"][a-f0-9]{40}['\\\"]",
             "description": "GitHub OAuth App Secret"
         },
         {
@@ -904,7 +567,7 @@
             "description": "Jenkins Crumb Token"
         },
         {
-            "regex": "[a-z0-9]{52}",
+            "regex": "(?i)(?:azure|devops|vsts)(?:.{0,20})?['\\\"][a-z0-9]{52}['\\\"]",
             "description": "Azure DevOps Token"
         },
         {
@@ -920,11 +583,11 @@
             "description": "Netlify Access Token"
         },
         {
-            "regex": "[a-f0-9]{32}",
+            "regex": "(?i)bugsnag(?:.{0,20})?['\\\"][a-f0-9]{32}['\\\"]",
             "description": "Bugsnag API Key"
         },
         {
-            "regex": "[a-z0-9]{32}",
+            "regex": "(?i)datadog(?:.{0,20})?['\\\"][a-z0-9]{32}['\\\"]",
             "description": "Datadog API Key"
         },
         {
@@ -1014,9 +677,40 @@
         {
             "regex": "amzn\\.mws\\.[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}",
             "description": "AWS MWS Token"
+        },
+        {
+            "regex": "\\bsk-(?:proj-)?[A-Za-z0-9_-]{32,}\\b",
+            "description": "OpenAI API Key"
+        },
+        {
+            "regex": "\\bsk-ant-api03-[A-Za-z0-9_-]{80,}\\b",
+            "description": "Anthropic API Key"
+        },
+        {
+            "regex": "\\bhf_[A-Za-z0-9]{34}\\b",
+            "description": "Hugging Face Token"
+        },
+        {
+            "regex": "\\bnpm_[A-Za-z0-9]{36}\\b",
+            "description": "npm Access Token"
+        },
+        {
+            "regex": "https:\\/\\/hooks\\.slack\\.com\\/services\\/T[A-Za-z0-9_]+\\/B[A-Za-z0-9_]+\\/[A-Za-z0-9]{24}",
+            "description": "Slack Webhook URL"
+        },
+        {
+            "regex": "\\\"type\\\"\\s*:\\s*\\\"service_account\\\"",
+            "description": "Google Service Account (JSON)"
+        },
+        {
+            "regex": "\\bglsa_[A-Za-z0-9]{32}_[A-Fa-f0-9]{8}\\b",
+            "description": "Grafana Service Account Token"
+        },
+        {
+            "regex": "\\bdapi[a-f0-9]{32}\\b",
+            "description": "Databricks Token"
         }
     ],
-
     "geolocation": [
         {
             "regex": "[-+]?([1-8]?\\d(\\.\\d+)?|90(\\.0+)?),\\s*[-+]?(180(\\.0+)?|((1[0-7]\\d)|([1-9]?\\d))(\\.\\d+)?)",
@@ -1025,20 +719,12 @@
         {
             "regex": "\\b[23456789CFGHJMPQRVWX]{4,8}\\+[23456789CFGHJMPQRVWX]{2,3}\\b",
             "description": "Google Plus Code (Open Location Code)"
-        }
-    ],
-
-    "documentsAdditional": [
-        {
-            "regex": "\\b\\d{3}\\.\\d{5}\\.\\d{2}-\\d{1}\\b",
-            "description": "NIS - Número de Identificação Social"
         },
         {
-            "regex": "\\d{6}\\s\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{1}\\s\\d{5}\\s\\d{3}\\s\\d{7}-\\d{2}",
-            "description": "Certidão (Nascimento/Casamento) - Formato nacional unificado"
+            "regex": "\\d{1,3}[°º]\\s?\\d{1,2}['′]\\s?\\d{1,2}(?:[.,]\\d+)?[\\\"″]?\\s?[NSLWEO]",
+            "description": "Coordenadas em graus, minutos e segundos (DMS)"
         }
     ],
-
     "databaseUrls": [
         {
             "regex": "mongodb(\\+srv)?:\\/\\/[^\\s'\"]+",
@@ -1081,7 +767,6 @@
             "description": "Cloud SQL URI (GCP)"
         }
     ],
-
     "containerSecrets": [
         {
             "regex": "(?i)docker(.{0,20})?password['\"]\\s*[:=]\\s*['\"][^\\s'\"]{8,}['\"]",
@@ -1104,7 +789,7 @@
             "description": "Helm Secret Value"
         },
         {
-            "regex": "secrets\\.[A-Z0-9_]+",
+            "regex": "\\$\\{\\{\\s*secrets\\.[A-Z0-9_]+\\s*\\}\\}",
             "description": "GitHub Actions Secret Reference"
         },
         {
@@ -1116,7 +801,7 @@
             "description": "K8s Service Account Token"
         },
         {
-            "regex": "s\\.[a-zA-Z0-9]{8,}",
+            "regex": "(?i)vault(?:.{0,20})?['\\\"]s\\.[a-zA-Z0-9]{24,}['\\\"]",
             "description": "Vault Token"
         },
         {
@@ -1124,7 +809,6 @@
             "description": "Hashicorp Vault URL"
         }
     ],
-
     "privateKeys": [
         {
             "regex": "-----BEGIN RSA PRIVATE KEY-----",
@@ -1151,7 +835,6 @@
             "description": "PEM Certificate"
         }
     ],
-
     "sensitivePatterns": [
         {
             "regex": "(?i)(password|passwd|pwd)['\"]\\s*[:=]\\s*['\"][^'\"]{4,}['\"]",
@@ -1190,7 +873,6 @@
             "description": "JWT in Local Storage"
         }
     ],
-
     "internalUrls": [
         {
             "regex": "\\b(10\\.\\d{1,3}|\\b192\\.168|\\b172\\.(1[6-9]|2\\d|3[01]))\\.\\d{1,3}\\.\\d{1,3}",

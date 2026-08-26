@@ -1,0 +1,624 @@
+{
+    "boleto": [
+        {
+            "regex": "(\\d{5}[\\.]\\d{5}[\\s]\\d{5}[\\.]\\d{6}[\\s]\\d{5}[\\.]\\d{6}[\\s]\\d[\\s]\\d{14})|(\\d{47,48})|(\\d{12} \\d{12} \\d{12} \\d{12})",
+            "description": "Boleto Bancário e Linha Digitável"
+        },
+        {
+            "regex": "\\b8[1-4]\\d{42}\\b|\\b\\d{11}-\\d\\s\\d{11}-\\d\\s\\d{11}-\\d\\s\\d{11}-\\d\\b",
+            "description": "Boleto de arrecadação/concessionária - código de barras (44 dígitos, inicia com 8) e linha digitável"
+        }
+    ],
+    "cadastur": [
+        {
+            "regex": "([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[/]?[0-9]{4}[-]?[0-9]{2})",
+            "description": "Cadastro de Prestadores de Serviços Turísticos"
+        }
+    ],
+    "cep": [
+        {
+            "regex": "(^[0-9]{5})-?([0-9]{3}$)",
+            "description": "Código de Endereçamento Postal "
+        }
+    ],
+    "cnpj": [
+        {
+            "regex": "\\b\\d{2}\\.\\d{3}\\.\\d{3}\\/\\d{4}-\\d{2}\\b|\\b\\d{14}\\b",
+            "description": "Cadastro Nacional da Pessoa Jurídica"
+        }
+    ],
+    "cnpjAlfanumerico": [
+        {
+            "regex": "^([A-Za-z0-9]{2}[\\.]?[A-Za-z0-9]{3}[\\.]?[A-Za-z0-9]{3}[\\/]?[A-Za-z0-9]{4}[-]?\\d{2})$",
+            "description": "Cadastro Nacional da Pessoa Jurídica válido a partir de Julho de 2026"
+        }
+    ],
+    "cnpjOuCpf": [
+        {
+            "regex": "^(([0-9]{2}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[\\/]?[0-9]{4}[-]?[0-9]{2})|([0-9]{3}[\\.]?[0-9]{3}[\\.]?[0-9]{3}[-]?[0-9]{2})|[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2})$",
+            "description": "Cadastro de Pessoas Físicas ou Jurídicas"
+        }
+    ],
+    "cnpjAlfanamuericoOuCpf": [
+        {
+            "regex": "^(([A-Za-z0-9]{2}[\\.]?[A-Za-z0-9]{3}[\\.]?[A-Za-z0-9]{3}[\\/]?[A-Za-z0-9]{4}[-]?\\d{2})|[0-9]{3}\\.?[0-9]{3}\\.?[0-9]{3}\\-?[0-9]{2})$",
+            "description": "Cadastro de Pessoas Físicas ou Cadastro de Pessoas Jurídicas válido a partir de Julho de 2026"
+        }
+    ],
+    "cnh": [
+        {
+            "regex": "(?:CNH|cnh|[Hh]abilitação|[Cc]arteira)\\D{0,15}(\\d{11})\\b",
+            "description": "Carteira Nacional de Habilitação"
+        }
+    ],
+    "cpf": [
+        {
+            "regex": "\\b\\d{3}\\.\\d{3}\\.\\d{3}-\\d{2}\\b|\\b\\d{11}\\b",
+            "description": "Cadastro de Pessoas Físicas"
+        }
+    ],
+    "crm": [
+        {
+            "regex": "\\b(?:CRM|crm)[\\s\\/:-]{0,3}[A-Za-z]{2}[\\s\\/:-]{0,3}\\d{4,7}\\b|\\b\\d{4,7}[\\s\\/-]?(?:CRM|crm)[\\s\\/-]?[A-Za-z]{2}\\b",
+            "description": "Conselho Federal de Medicina - inscrição com sigla da UF"
+        }
+    ],
+    "ie": [
+        {
+            "regex": "^(01)[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}/?\\d{3}\\-?\\d{2}$",
+            "description": "AC"
+        },
+        {
+            "regex": "^(24)(0|3|5|7|8)\\d{6}$",
+            "description": "AL"
+        },
+        {
+            "regex": "^(03)\\d{7}$",
+            "description": "AP"
+        },
+        {
+            "regex": "^\\d{2}[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}\\-?\\d{1}$",
+            "description": "AM, GO"
+        },
+        {
+            "regex": "^\\d{7}\\-?\\d{2}$",
+            "description": "BA (9 dígitos), PE"
+        },
+        {
+            "regex": "^\\d{6}\\-?\\d{2}$",
+            "description": "BA (8 dígitos)"
+        },
+        {
+            "regex": "^\\d{8}\\-?\\d{1}$",
+            "description": "CE, PA, SE"
+        },
+        {
+            "regex": "^\\d{8}\\-?\\d{2}$",
+            "description": "DF"
+        },
+        {
+            "regex": "^\\d{9}$",
+            "description": "ES, PI"
+        },
+        {
+            "regex": "^(12)\\d{7}$",
+            "description": "MA"
+        },
+        {
+            "regex": "^\\d{10}\\-?\\d{1}$",
+            "description": "MT"
+        },
+        {
+            "regex": "^(28)\\d{7}$",
+            "description": "MS"
+        },
+        {
+            "regex": "^\\d{3}[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}/?\\d{4}$",
+            "description": "MG"
+        },
+        {
+            "regex": "^(15)\\d{6}\\-?\\d{1}$",
+            "description": "PA"
+        },
+        {
+            "regex": "^\\d{3}[.\\-\\/]?\\d{5}\\-?\\d{2}$",
+            "description": "PR"
+        },
+        {
+            "regex": "^\\d{2}[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{2}\\-?\\d{1}$",
+            "description": "RJ"
+        },
+        {
+            "regex": "^(20)[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}\\-?\\d{1}$",
+            "description": "RN (9 dígitos)"
+        },
+        {
+            "regex": "^(20)[.\\-\\/]?\\d{1}[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}\\-?\\d{1}$",
+            "description": "RN (10 dígitos)"
+        },
+        {
+            "regex": "^\\d{3}/?\\d{7}$",
+            "description": "RS"
+        },
+        {
+            "regex": "^\\d{3}[.\\-\\/]?\\d{5}\\-?\\d{1}$",
+            "description": "RO (antes de 01/08/2000)"
+        },
+        {
+            "regex": "^\\d{13}\\-?\\d{1}$",
+            "description": "RO (a partir de 01/08/2000)"
+        },
+        {
+            "regex": "^(24)\\d{6}\\-?\\d{1}$",
+            "description": "RR"
+        },
+        {
+            "regex": "^\\d{3}[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}$",
+            "description": "SC"
+        },
+        {
+            "regex": "^\\d{3}[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}[.\\-\\/]?\\d{3}$",
+            "description": "SP"
+        },
+        {
+            "regex": "^(P)\\-?\\d{8}[.\\-\\/]?\\d/?\\d{3}$",
+            "description": "SP (Produtor Rural)"
+        },
+        {
+            "regex": "^(29)(01|02|03|99)\\d{7}$",
+            "description": "TO"
+        }
+    ],
+    "creditCard": [
+        {
+            "regex": "(?:4011|4312|4389|4514|4576|5041|5066|5067|6277|6362|6363)[0-9]{12}",
+            "description": "Elo - Cartão de crédito brasileiro (16 dígitos)"
+        },
+        {
+            "regex": "(?:38|60)[0-9]{11,17}",
+            "description": "Hipercard - Cartão de crédito brasileiro"
+        }
+    ],
+    "passaporte": [
+        {
+            "regex": "^[A-Z]{2}\\d{6}$",
+            "description": "Número do Passaporte"
+        }
+    ],
+    "pixChave": [
+        {
+            "regex": "([0-9]{14,20})([bB][rR]\\.[gG][oO][vV]\\.[bB][cC][bB]\\.[pP][iI][xX]).*(6304)([0-9a-zA-Z]{4})",
+            "description": "Chave PIX"
+        },
+        {
+            "regex": "000201.{0,200}?br\\.gov\\.bcb\\.pix.{0,400}?6304[A-Fa-f0-9]{4}",
+            "description": "PIX BR Code - payload EMV completo (copia e cola)"
+        },
+        {
+            "regex": "\\+55\\s?\\d{2}\\s?9?\\d{4}-?\\d{4}\\b",
+            "description": "Chave PIX do tipo telefone (formato E.164 brasileiro)"
+        }
+    ],
+    "pixChaveRandom": [
+        {
+            "regex": "\\b[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-4[0-9a-fA-F]{3}-[89abAB][0-9a-fA-F]{3}-[0-9a-fA-F]{12}\\b",
+            "description": "Chave PIX Aleatória (EVP - UUID v4)"
+        }
+    ],
+    "placaDetran": [
+        {
+            "regex": "\\b[A-Za-z]{3}-?\\d[A-Za-z0-9]\\d{2}\\b",
+            "description": "Placas de Carros e Motos Brasileiras (incluindo Mercosul)"
+        }
+    ],
+    "renavam": [
+        {
+            "regex": "((\\d{4})[.](\\d{6})-(\\d{1})|(\\d{4})(\\d{6})(\\d{1}))",
+            "description": "Registro Nacional de Veículos Automotores"
+        }
+    ],
+    "rg": [
+        {
+            "regex": "(\\d{1,2}\\.?)(\\d{3}\\.?)(\\d{3})(\\-?[0-9Xx]{1})",
+            "description": "Registro Geral"
+        }
+    ],
+    "rne": [
+        {
+            "regex": "(RNE)([A-Z\\d])(\\d{6})([A-Z\\d])",
+            "description": "Registro Nacional de Estrangeiro"
+        }
+    ],
+    "siglaUF": [
+        {
+            "regex": "\\b(?:AC|AL|AP|AM|BA|CE|DF|ES|GO|MA|MT|MS|MG|PA|PB|PR|PE|PI|RJ|RN|RS|RO|RR|SC|SP|SE|TO|BR)\\b",
+            "description": "Siglas das Unidades Federativas do Brasil"
+        }
+    ],
+    "telefone": [
+        {
+            "regex": "(?:\\+?55\\s?)?(?:\\(?\\d{2}\\)?[\\s.-]?)?(?:9\\s?)?\\d{4}[-.\\s]?\\d{4}\\b",
+            "description": "Telefone Brasil"
+        }
+    ],
+    "processoCnj": [
+        {
+            "regex": "\\b\\d{7}-?\\d{2}\\.?\\d{4}\\.?[1-9]\\.?\\d{2}\\.?\\d{4}\\b",
+            "description": "Processos judiciais com numeração padrão do CNJ, em estrutura formatada (com caracteres especiais) ou não"
+        }
+    ],
+    "numeroDeEndereco": [
+        {
+            "regex": "^(?:[Ss]\\/?[Nn]|\\d{1,6})$",
+            "description": "Número de Endereço (números ou 'S/N', 's/n', 'S/n', 's/N')"
+        }
+    ],
+    "bankAccount": [
+        {
+            "regex": "\\b\\d{4}-[0-9X]\\s+\\d{8}-[0-9X]\\b",
+            "description": "Banco do Brasil – Agência 9999-D | Conta 99999999-D"
+        },
+        {
+            "regex": "\\b\\d{4}-[0-9X]\\s+\\d{7}-[0-9X]\\b",
+            "description": "Bradesco – Agência 9999-D | Conta 9999999-D"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+[0-9]{3}\\d{8}-[0-9X]\\b",
+            "description": "Caixa Econômica – Agência 9999 | Operação XXX + Conta 99999999-D"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+[0-9]{4}\\d{9}-[0-9X]\\b",
+            "description": "Caixa Econômica – Agência 9999 | Operação XXXX + Conta 999999999-D (novo formato CP)"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{5}-[0-9X]\\b",
+            "description": "Itaú – Agência 9999 | Conta 99999-D"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{6}\\b",
+            "description": "Sicredi – Agência 9999 | Conta 999999"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{6}-[0-9X]\\b",
+            "description": "BS2 – Agência 9999 | Conta 999999-D"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{7}-[0-9X]\\b",
+            "description": "Agência 9999 | Conta 9999999-D – Banco Original, C6, Cora, Next, Stone (formato, não identifica o banco)"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{8}-[0-9X]\\b",
+            "description": "Agência 9999 | Conta 99999999-D – Santander, PagSeguro, Safra, Unicred (formato, não identifica o banco)"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{9}-[0-9X]\\b",
+            "description": "Agência 9999 | Conta 999999999-D – Inter, Banrisul, Sicoob, BRB, Neon/Votorantim (formato, não identifica o banco)"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{10}-[0-9X]\\b",
+            "description": "Agência 9999 | Conta 9999999999-D – Nubank, PJBank (formato, não identifica o banco)"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{11}-[0-9X]\\b",
+            "description": "Via Credi – Agência 9999 | Conta 99999999999-D"
+        },
+        {
+            "regex": "\\b\\d{4}\\s+\\d{13}-[0-9X]\\b",
+            "description": "Mercado Pago – Agência 9999 | Conta 9999999999999-D"
+        }
+    ],
+    "tituloEleitor": [
+        {
+            "regex": "\\b\\d{4}\\s?\\d{4}\\s?\\d{4}\\b",
+            "description": "Título de Eleitor - 12 dígitos"
+        }
+    ],
+    "pisPasep": [
+        {
+            "regex": "\\d{3}\\.?\\d{5}\\.?\\d{2}[-\\s]?\\d{1}",
+            "description": "PIS/PASEP/NIT - Programa de Integração Social"
+        }
+    ],
+    "cartaoSus": [
+        {
+            "regex": "\\b\\d{3}\\s?\\d{4}\\s?\\d{4}\\s?\\d{4}\\b",
+            "description": "Cartão Nacional de Saúde - SUS"
+        }
+    ],
+    "cnes": [
+        {
+            "regex": "(?:CNES|cnes)[\\s.:nº°-]{0,6}(\\d{7})\\b",
+            "description": "Cadastro Nacional de Estabelecimentos de Saúde - precedido do rótulo CNES"
+        }
+    ],
+    "inscricaoMunicipal": [
+        {
+            "regex": "(?:IM|[Ii]nscrição [Mm]unicipal|CCM)[\\s.:nº°-]{0,6}(\\d{6,15})\\b",
+            "description": "Inscrição Municipal - precedida do rótulo (formato varia por município)"
+        }
+    ],
+    "codigoIbge": [
+        {
+            "regex": "(?:IBGE|ibge)[\\s.:nº°-]{0,6}(\\d{7})\\b",
+            "description": "Código IBGE de Município - precedido do rótulo IBGE"
+        }
+    ],
+    "cns": [
+        {
+            "regex": "[1-2]\\d{10}00[0-1]\\d|[7-9]\\d{14}",
+            "description": "Cartão Nacional de Saúde - formato validado"
+        }
+    ],
+    "ctps": [
+        {
+            "regex": "\\d{7}\\s?(\\d{5})?",
+            "description": "Carteira de Trabalho e Previdência Social"
+        }
+    ],
+    "rastreamentoCorreios": [
+        {
+            "regex": "\\b[A-Za-z]{2}\\d{9}[A-Za-z]{2}\\b",
+            "description": "Código de rastreamento dos Correios e postal internacional (SS999999999PP)"
+        }
+    ],
+    "chaveNfe": [
+        {
+            "regex": "\\b\\d{44}\\b",
+            "description": "Chave de Acesso de documento fiscal eletrônico (NF-e, CT-e, MDF-e) - 44 dígitos"
+        }
+    ],
+    "socialMedia": [
+        {
+            "regex": "(?:whatsapp\\.com\\/|wa\\.me\\/|api\\.whatsapp\\.com\\/send\\?phone=)(?:\\+?55)?\\s?\\(?\\d{2}\\)?\\s?9?\\d{4}[-\\s]?\\d{4}",
+            "description": "WhatsApp - Links com número brasileiro"
+        }
+    ],
+    "vehicles": [
+        {
+            "regex": "\\b\\d{8}\\b",
+            "description": "ANTT - Registro de transportador"
+        }
+    ],
+    "business": [
+        {
+            "regex": "\\d{2}\\.\\d{3}\\.\\d{3}\\/\\d{4}",
+            "description": "SUFRAMA - Superintendência da Zona Franca de Manaus"
+        },
+        {
+            "regex": "(?:CAGED|caged)[\\s.:nº°-]{0,6}(\\d{7})\\b",
+            "description": "CAGED - Cadastro Geral de Empregados e Desempregados (precedido do rótulo)"
+        },
+        {
+            "regex": "\\d{3}\\.\\d{3}\\.\\d{3}\\-\\d{2}\\/\\d{2}",
+            "description": "CAEPF - Cadastro de Atividade Econômica da Pessoa Física"
+        }
+    ],
+    "education": [
+        {
+            "regex": "\\d{12}",
+            "description": "ENEM - Número de inscrição (12 dígitos)"
+        },
+        {
+            "regex": "\\b(CR[A-Z]{1,3})\\s?\\d{4,10}[\\/\\-]?[A-Z]{2}\\b",
+            "description": "Registro Profissional - CREA, CRO, CRC, COREN, etc"
+        }
+    ],
+    "apiCredentials": [
+        {
+            "regex": "\\bAPP_USR-\\d{16,}-\\d{6}-[a-f0-9]{32}-\\d{6,}\\b",
+            "description": "Mercado Pago Access Token"
+        },
+        {
+            "regex": "\\b(?:ak|sk)_(?:live|test)_[A-Za-z0-9]{30,}\\b",
+            "description": "Pagar.me API Key"
+        },
+        {
+            "regex": "\\$aact_[A-Za-z0-9_=\\-]{80,}",
+            "description": "Asaas API Key"
+        }
+    ],
+    "documentsAdditional": [
+        {
+            "regex": "\\b\\d{3}\\.\\d{5}\\.\\d{2}-\\d{1}\\b",
+            "description": "NIS - Número de Identificação Social"
+        },
+        {
+            "regex": "\\d{6}\\s\\d{2}\\s\\d{2}\\s\\d{4}\\s\\d{1}\\s\\d{5}\\s\\d{3}\\s\\d{7}-\\d{2}",
+            "description": "Certidão (Nascimento/Casamento) - Formato nacional unificado"
+        }
+    ],
+    "identificadoresGov": [
+        {
+            "regex": "\\*{3}\\.?\\d{3}\\.?\\d{3}-?\\*{2}",
+            "description": "CPF mascarado - formato publicado em portais de transparência e no TSE"
+        },
+        {
+            "regex": "\\b(?:OAB|oab)[\\s\\/:-]{0,3}[A-Za-z]{2}[\\s\\/:-]{0,3}\\d{2,6}\\b|\\b\\d{2,6}[\\s\\/-]?(?:OAB|oab)[\\s\\/-]?[A-Za-z]{2}\\b",
+            "description": "OAB - Inscrição na Ordem dos Advogados do Brasil com seccional"
+        },
+        {
+            "regex": "\\b(?:SIAPE|siape)[\\s.:nº°-]{0,6}\\d{7}\\b",
+            "description": "SIAPE - Matrícula de servidor público federal"
+        },
+        {
+            "regex": "\\b(?:lattes\\.cnpq\\.br\\/|ID Lattes:?\\s*)\\d{16}\\b",
+            "description": "Currículo Lattes - Identificador CNPq (16 dígitos)"
+        },
+        {
+            "regex": "\\b\\d{5}\\.\\d{6}\\/\\d{4}-\\d{2}\\b",
+            "description": "Processo administrativo federal - numeração SEI/NUP"
+        },
+        {
+            "regex": "\\b(?:NB|benef[ií]cio)[\\s.:nº°-]{0,6}\\d{3}\\.?\\d{3}\\.?\\d{3}-?\\d\\b",
+            "description": "NB - Número do Benefício do INSS"
+        },
+        {
+            "regex": "\\b\\d{3}\\.\\d{3}\\.\\d{3}\\.\\d{3}-\\d\\b",
+            "description": "CCIR/INCRA - Código do imóvel rural"
+        },
+        {
+            "regex": "\\b(?:MS|M\\.S\\.)\\s?\\d{1}\\.?\\d{4}\\.?\\d{4}\\.?\\d{3}-?\\d?\\b",
+            "description": "Registro ANVISA - Medicamento (registro MS)"
+        },
+        {
+            "regex": "\\b(?:ISPB|ispb)[\\s.:-]{0,3}\\d{8}\\b",
+            "description": "ISPB - Identificador de instituição financeira no Bacen"
+        },
+        {
+            "regex": "\\b\\d{2}\\.\\d{3}\\.\\d{3}\\b",
+            "description": "CNPJ raiz - 8 dígitos, sem sufixo de filial e sem DV"
+        }
+    ],
+    "cepPorUf": [
+        {
+            "regex": "\\b7(?:[0-2][0-7]|3[0-6])\\d{2}-?\\d{3}\\b",
+            "description": "DF - 70000-000 a 72799-999 e 73000-000 a 73699-999"
+        },
+        {
+            "regex": "\\b7(?:2[89]|3[7-9]|[45]\\d|6[0-7])\\d{2}-?\\d{3}\\b",
+            "description": "GO - 72800-000 a 72999-999 e 73700-000 a 76799-999"
+        },
+        {
+            "regex": "\\b79\\d{3}-?\\d{3}\\b",
+            "description": "MS - 79000-000 a 79999-999"
+        },
+        {
+            "regex": "\\b78[0-8]\\d{2}-?\\d{3}\\b",
+            "description": "MT - 78000-000 a 78899-999"
+        },
+        {
+            "regex": "\\b57\\d{3}-?\\d{3}\\b",
+            "description": "AL - 57000-000 a 57999-999"
+        },
+        {
+            "regex": "\\b4[0-8]\\d{3}-?\\d{3}\\b",
+            "description": "BA - 40000-000 a 48999-999"
+        },
+        {
+            "regex": "\\b6[0-3]\\d{3}-?\\d{3}\\b",
+            "description": "CE - 60000-000 a 63999-999"
+        },
+        {
+            "regex": "\\b65\\d{3}-?\\d{3}\\b",
+            "description": "MA - 65000-000 a 65999-999"
+        },
+        {
+            "regex": "\\b58\\d{3}-?\\d{3}\\b",
+            "description": "PB - 58000-000 a 58999-999"
+        },
+        {
+            "regex": "\\b5[0-6]\\d{3}-?\\d{3}\\b",
+            "description": "PE - 50000-000 a 56999-999"
+        },
+        {
+            "regex": "\\b64\\d{3}-?\\d{3}\\b",
+            "description": "PI - 64000-000 a 64999-999"
+        },
+        {
+            "regex": "\\b59\\d{3}-?\\d{3}\\b",
+            "description": "RN - 59000-000 a 59999-999"
+        },
+        {
+            "regex": "\\b49\\d{3}-?\\d{3}\\b",
+            "description": "SE - 49000-000 a 49999-999"
+        },
+        {
+            "regex": "\\b699\\d{2}-?\\d{3}\\b",
+            "description": "AC - 69900-000 a 69999-999"
+        },
+        {
+            "regex": "\\b689\\d{2}-?\\d{3}\\b",
+            "description": "AP - 68900-000 a 68999-999"
+        },
+        {
+            "regex": "\\b69(?:[0-2]|[4-8])\\d{2}-?\\d{3}\\b",
+            "description": "AM - 69000-000 a 69299-999 e 69400-000 a 69899-999"
+        },
+        {
+            "regex": "\\b(?:6[6-7]\\d{3}|68[0-8]\\d{2})-?\\d{3}\\b",
+            "description": "PA - 66000-000 a 68899-999"
+        },
+        {
+            "regex": "\\b76[89]\\d{2}-?\\d{3}\\b",
+            "description": "RO - 76800-000 a 76999-999"
+        },
+        {
+            "regex": "\\b693\\d{2}-?\\d{3}\\b",
+            "description": "RR - 69300-000 a 69399-999"
+        },
+        {
+            "regex": "\\b77\\d{3}-?\\d{3}\\b",
+            "description": "TO - 77000-000 a 77999-999"
+        },
+        {
+            "regex": "\\b29\\d{3}-?\\d{3}\\b",
+            "description": "ES - 29000-000 a 29999-999"
+        },
+        {
+            "regex": "\\b3\\d{4}-?\\d{3}\\b",
+            "description": "MG - 30000-000 a 39999-999"
+        },
+        {
+            "regex": "\\b2[0-8]\\d{3}-?\\d{3}\\b",
+            "description": "RJ - 20000-000 a 28999-999"
+        },
+        {
+            "regex": "\\b(?:0[1-9]\\d{3}|1\\d{4})-?\\d{3}\\b",
+            "description": "SP - 01000-000 a 19999-999"
+        },
+        {
+            "regex": "\\b8[0-7]\\d{3}-?\\d{3}\\b",
+            "description": "PR - 80000-000 a 87999-999"
+        },
+        {
+            "regex": "\\b9\\d{4}-?\\d{3}\\b",
+            "description": "RS - 90000-000 a 99999-999"
+        },
+        {
+            "regex": "\\b8[89]\\d{3}-?\\d{3}\\b",
+            "description": "SC - 88000-000 a 89999-999"
+        }
+    ],
+    "cpfPorUf": [
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}0-?\\d{2}$",
+            "description": "RS - 9º dígito 0"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}1-?\\d{2}$",
+            "description": "DF, GO, MT, MS, TO - 9º dígito 1"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}2-?\\d{2}$",
+            "description": "AM, PA, RR, AP, AC, RO - 9º dígito 2"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}3-?\\d{2}$",
+            "description": "CE, MA, PI - 9º dígito 3"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}4-?\\d{2}$",
+            "description": "PB, PE, AL, RN - 9º dígito 4"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}5-?\\d{2}$",
+            "description": "BA, SE - 9º dígito 5"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}6-?\\d{2}$",
+            "description": "MG - 9º dígito 6"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}7-?\\d{2}$",
+            "description": "RJ, ES - 9º dígito 7"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}8-?\\d{2}$",
+            "description": "SP - 9º dígito 8"
+        },
+        {
+            "regex": "^\\d{3}\\.?\\d{3}\\.?\\d{2}9-?\\d{2}$",
+            "description": "PR, SC - 9º dígito 9"
+        }
+    ]
+}

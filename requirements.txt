@@ -1,0 +1,39 @@
+# =============================================================================
+# osint-brazuca-regex - dependências Python
+#
+# O núcleo NÃO tem dependência externa: osint_regex_scan.py e dataset/build.py
+# rodam apenas com a biblioteca padrão do Python 3.12+.
+#
+# Os pacotes abaixo são OPCIONAIS e apenas ampliam o que a ferramenta consegue
+# fazer. Sem eles nada quebra: o scanner continua funcionando, só pula os PDFs
+# (avisando como habilitar) e usa uma detecção de encoding mais simples.
+#
+#     pip install -r requirements.txt
+#
+# Confira o que está ativo no seu ambiente com:
+#
+#     python3 osint_regex_scan.py --list-extractors
+# =============================================================================
+
+# Extração de texto de PDF.
+# O scanner tenta primeiro o binário `pdftotext` (pacote de sistema poppler-utils,
+# não instalável por pip) e recorre a este pacote quando ele não existe. Sem
+# nenhum dos dois, PDFs são pulados em vez de escaneados como bytes crus.
+# O código também aceita o PyPDF2 legado, mas o pypdf é o sucessor mantido.
+pypdf>=3.9.0
+
+# Detecção de encoding em arquivos de texto que não são UTF-8 nem trazem BOM.
+# Sem este pacote o fallback é latin-1, que decodifica qualquer byte mas pode
+# trocar acentos em arquivos de outras codificações.
+chardet>=5.0.0
+
+# -----------------------------------------------------------------------------
+# Dependência de sistema (não é pip):
+#
+#   Debian/Ubuntu   sudo apt install poppler-utils
+#   Fedora          sudo dnf install poppler-utils
+#   macOS           brew install poppler
+#
+# Fornece o `pdftotext`, o extrator de PDF preferido por preservar melhor a
+# ordem de leitura e ser mais rápido em arquivos grandes.
+# -----------------------------------------------------------------------------
