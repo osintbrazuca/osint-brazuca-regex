@@ -117,6 +117,15 @@ python3 osint_regex_scan.py ./dump --categories meus_vips --js-db ./dataset/test
 > [!TIP]
 > O scanner só casa regex sobre **texto**: PDF, DOCX, XLSX, ODT, EPUB e RTF têm o texto extraído antes; demais binários são pulados. Rode `--list-extractors` para ver o que está disponível no seu ambiente.
 
+Também é possível instalar o scanner com o [OTinstaller](https://github.com/OSINTVerseHQ/OTinstaller), um gerenciador de ferramentas de terceiros para Linux que instala este repositório em um virtualenv próprio (requer Python 3.12+, como o scanner). O OTinstaller não é mantido por este projeto; problemas com ele devem ser relatados [no repositório do OTinstaller](https://github.com/OSINTVerseHQ/OTinstaller/issues).
+
+```bash
+pipx install otinstaller
+otinstaller init
+otinstaller install osint-brazuca-regex
+otinstaller run osint-brazuca-regex -- relatorio.txt --categories cpf,email
+```
+
 <h1 align="center">
   <a href="./tool.md"><img src="assets/01.png" alt="OSINT Brazuca"></a>
 </h1>
