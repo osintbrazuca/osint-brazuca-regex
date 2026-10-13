@@ -121,6 +121,7 @@ Também é possível instalar o scanner com o [OTinstaller](https://github.com/O
 
 ```bash
 pipx install otinstaller
+otinstaller init
 otinstaller install osint-brazuca-regex
 otinstaller run osint-brazuca-regex -- relatorio.txt --categories cpf,email
 ```
